@@ -1,0 +1,624 @@
+{
+  "_leia": [
+    "O que mudou em cada versao, para a tela 'Versao do sistema' poder dizer mais que um numero.",
+    "Este arquivo VIAJA COM O PACOTE: cada versao instalada carrega as proprias notas, e por isso",
+    "a versao guardada em <app>.anterior continua sabendo contar o que ELA trouxe.",
+    "",
+    "Escreva na lingua de quem usa o sistema, nao na de quem programou. 'onde' e a tela ou area",
+    "afetada - e o que permite a pessoa julgar o risco de atualizar ou de voltar.",
+    "tipo: novidade | correcao | melhoria.",
+    "",
+    "Os TEXTOS vao acentuados: sao lidos por quem usa o sistema, nao por quem edita este arquivo.",
+    "O arquivo e UTF-8 sem BOM - e assim que o NotasDaVersao.Ler o le."
+  ],
+  "versoes": [
+    {
+      "numero": "1.2.11",
+      "data": "2026-10-28",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Depois de finalizar a nota, a tela espera a autorização e libera o botão de imprimir o DANFE (ou a NFS-e, ou o documento interno). Com a configuração VoltaDfeEmitidas ligada, volta direto para DF-e Emitidas.", "onde": "Emissões > NF-e" },
+        { "tipo": "novidade", "o_que": "Imprimir a NFS-e autorizada, com o PDF lido da pasta do monitor de NFS-e.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "novidade", "o_que": "F7 na aba Itens mostra quanto cada condição de pagamento acrescenta de juros; os juros da condição valem também para condições com entrada.", "onde": "Vendas > Pedidos" },
+        { "tipo": "novidade", "o_que": "Consultar o CNPJ na Receita e a inscrição estadual na SEFAZ ao corrigir o cadastro do cliente; o que mudou fica em vermelho.", "onde": "Vendas e Emissões" },
+        { "tipo": "novidade", "o_que": "Centro de custo na inclusão de título a pagar e a receber.", "onde": "Financeiro" },
+        { "tipo": "melhoria", "o_que": "Controle de Comissões em árvore, com os vendedores agrupados e os totais de cada um.", "onde": "Financeiro > Comissões" },
+        { "tipo": "melhoria", "o_que": "MDF-e e CT-e em página única por etapa, como a NF-e; no MDF-e, produto predominante, NCM e percurso vêm preenchidos pelos documentos.", "onde": "Emissões > MDF-e e CT-e" },
+        { "tipo": "melhoria", "o_que": "Envio ao Domínio também da NFS-e; a conexão vai para a engrenagem e a lista de envios se atualiza sozinha.", "onde": "Integrações > Domínio" },
+        { "tipo": "melhoria", "o_que": "Nos relatórios do financeiro, os valores que descontam saem em vermelho.", "onde": "Relatórios" },
+        { "tipo": "correcao", "o_que": "O aviso de troco sem dinheiro ou cheque aparece ao lançar o meio de pagamento, não só no Confirmar.", "onde": "Emissões > NFC-e" }
+      ]
+    },
+    {
+      "numero": "1.2.10",
+      "data": "2026-10-27",
+      "mudancas": [
+        { "tipo": "melhoria", "o_que": "Telas de inclusão com a cor do documento: o selo no alto diz qual documento está aberto (NF-e, NFC-e, CT-e, MDF-e, entrada) e a tela inteira ganha o tom dele.", "onde": "Emissões e Lançamentos" },
+        { "tipo": "novidade", "o_que": "Enviar a nota e os boletos por e-mail pelo botão em DF-e Emitidas; no envio automático, o e-mail espera o boleto ficar pronto.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "novidade", "o_que": "Botão Imprimir Romaneio, ligado pela configuração UsaRomaneio.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "novidade", "o_que": "Juros pela taxa da condição de pagamento; trocar a condição no pagamento refaz as parcelas.", "onde": "Vendas > Pedidos" },
+        { "tipo": "correcao", "o_que": "A nota gerada de um pedido com juros da condição cobrava os juros duas vezes.", "onde": "Emissões > NF-e" },
+        { "tipo": "novidade", "o_que": "Botão Gerar mensalidades.", "onde": "Financeiro > Controle de Clientes" },
+        { "tipo": "melhoria", "o_que": "O boleto abre na tela, com o botão Voltar, como o DANFE; o painel do título a receber mostra os dados do cadastro do cliente.", "onde": "Financeiro" },
+        { "tipo": "melhoria", "o_que": "Animações no sistema todo, com a opção de desligar (configuração DesligaAnimacoes); a troca de tema não deixa mais partes da tela na cor antiga.", "onde": "Sistema todo" },
+        { "tipo": "correcao", "o_que": "CT-e recusado quando o endereço de uma das partes tinha espaço no começo ou no fim.", "onde": "Emissões > CT-e" },
+        { "tipo": "novidade", "o_que": "Manutenção do relatório em página própria e edição do leiaute pelo SIG3 instalado no computador.", "onde": "Relatórios" },
+        { "tipo": "novidade", "o_que": "O instalador do servidor instala o Firebird 5 quando a máquina não tem banco, e prepara a base de um cliente novo que não usa o sistema antigo.", "onde": "Instalação" },
+        { "tipo": "melhoria", "o_que": "O sistema registra as lentidões com a causa provável, para o suporte investigar.", "onde": "Suporte" }
+      ]
+    },
+    {
+      "numero": "1.2.9",
+      "data": "2026-10-23",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Ver espelho: a nota Registrada, Em Espera ou Com erro mostra o DANFE com a marca SEM VALOR FISCAL, para o cliente conferir antes de transmitir.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "novidade", "o_que": "Documento interno (operação que não emite nota) ganha o botão Imprimir, com um papel no molde do pedido de venda.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "melhoria", "o_que": "O PDF do MDF-e (DAMDFE) é guardado junto do XML na autorização, como o DANFE.", "onde": "Emissões > MDF-e" },
+        { "tipo": "novidade", "o_que": "Modelos de documento (DANFE, pedido, OS, recibo...) customizados por cliente na pasta Documentos da instalação, que a atualização não apaga.", "onde": "Instalação" },
+        { "tipo": "novidade", "o_que": "Tela inicial nova em três colunas, com as tarefas do dia, o que precisa de atenção (inclusive os alertas do sino) e os favoritos.", "onde": "Início" },
+        { "tipo": "melhoria", "o_que": "Agenda reorganizada: lista com o calendário ao lado, quadro por prioridade, novo lembrete mais direto e opção de excluir o lembrete.", "onde": "Agenda" },
+        { "tipo": "melhoria", "o_que": "Lançar CT-e igual ao Lançar NF-e: transportadora e número obrigatórios, botão para cadastrar a transportadora, atalhos F2 e lista do que falta para finalizar.", "onde": "Lançamentos > Lançar DF-e" },
+        { "tipo": "melhoria", "o_que": "O XML da NF-e e do CT-e recebidos é arquivado na pasta de XML ao lançar.", "onde": "Lançamentos" },
+        { "tipo": "melhoria", "o_que": "Produção e Kits mostra quanto está disponível para produção.", "onde": "Estoque > Produção e Kits" }
+      ]
+    },
+    {
+      "numero": "1.2.8",
+      "data": "2026-10-22",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "DF-e Emitidas: NF-e, NFC-e, NFS-e, CT-e e MDF-e na mesma lista, com o botão Emitir DF-e no rodapé. O menu Vendas passa a se chamar Emissões.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "melhoria", "o_que": "MDF-e no padrão do sistema antigo e do monitor, com tela mais direta; CT-e e MDF-e com o mesmo teclado, rodapé e detalhe das notas.", "onde": "Emissões > CT-e e MDF-e" },
+        { "tipo": "novidade", "o_que": "Pedidos: lista e consulta no padrão das DF-e Emitidas, parcelamento personalizado com prazo padrão e tabela de parcelamento com juros (F7), desconto em % e em R$ e lucro negativo em vermelho.", "onde": "Vendas > Pedidos" },
+        { "tipo": "novidade", "o_que": "Kit produzido na hora da venda, com aviso no momento do item quando falta insumo para produzir.", "onde": "Estoque > Produção e Kits" },
+        { "tipo": "melhoria", "o_que": "Cadastro de produtos: a consulta mostra os dados em rótulo e valor, como nas notas, com a venda varejo em destaque; a inclusão ficou organizada em Identificação, Classificação e Controles.", "onde": "Cadastros > Produtos" },
+        { "tipo": "novidade", "o_que": "Manifestação: manifestação do CT-e, importar DF-e pela chave de acesso, copiar chave pelo botão direito e coluna de situação com lançamento, manifestação e XML.", "onde": "Compras > Manifestação" },
+        { "tipo": "melhoria", "o_que": "Lançar Nota: o Avançar mostra a lista do que falta, e a operação só trava o lançamento, não o avanço.", "onde": "Compras > Lançar Nota" },
+        { "tipo": "novidade", "o_que": "Relatórios: montar e trocar colunas na tela, juntar campos, escrever fórmula e ajustar o leiaute sem sair do sistema.", "onde": "Relatórios" },
+        { "tipo": "melhoria", "o_que": "Tela inicial com favoritos no topo e a lista do que precisa de atenção; o sino mostra só o número do nível mais grave e avisa homologação e contingência.", "onde": "Início" },
+        { "tipo": "novidade", "o_que": "Grupo Preferências no menu, com Meu menu e Ajustes pessoais.", "onde": "Menu" },
+        { "tipo": "melhoria", "o_que": "Enter no fim de uma aba dos cadastros passa para a próxima aba e, na última, para o Gravar.", "onde": "Cadastros" },
+        { "tipo": "melhoria", "o_que": "Telas de suporte (Versão do sistema, Acesso de computadores, Envio ao Domínio, E-mail do sistema, Banco de dados) só para o usuário 0 e o suporte; tela padrão de acesso negado.", "onde": "Sistema" },
+        { "tipo": "novidade", "o_que": "Sincronia do gerencial com as filiais fiscais, com perfil ligado ao Exp/Imp do sistema antigo.", "onde": "Sistema > Sincronia" }
+      ]
+    },
+    {
+      "numero": "1.2.7",
+      "data": "2026-10-17",
+      "mudancas": [
+        { "tipo": "melhoria", "o_que": "Ícones e elementos pequenos redondos em todo o sistema: ícones das pendências do Início, dias do calendário, caixinhas de marcar tarefa e título, avatar do menu, ponto de situação das listas e botões dos gráficos.", "onde": "Todas as telas" }
+      ]
+    },
+    {
+      "numero": "1.2.6",
+      "data": "2026-10-17",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Ordem de Serviço: quadro das OS, ficha do veículo ou equipamento e linha do tempo, com veículo opcional, Km só para veículo, placa de moto, impressão em A4 e nota resumida de 80 mm, e o faturamento pelas Notas Transmitidas.", "onde": "Vendas > Ordem de Serviço" },
+        { "tipo": "novidade", "o_que": "Cadastro de veículos da OS.", "onde": "Cadastros > Vendas" },
+        { "tipo": "novidade", "o_que": "Pedido com peça e serviço vira duas notas: o serviço sai numa nota de serviço e a NF-e leva só as peças.", "onde": "Vendas > Pedidos e NF-e" },
+        { "tipo": "melhoria", "o_que": "Lançar Nota reorganizado em etapas (Nota, Produtos e Revisão Final), com o Enter de ponta a ponta, F2 para avançar, aba Fiscal do item em grupos, Remarcação Rápida no item, Insert para incluir item na nota manual e um alerta com Recalcular para cada total que não bate.", "onde": "Compras > Lançar Nota" },
+        { "tipo": "melhoria", "o_que": "Notas de Entrada: totais e impostos em grupos com linha pontilhada e duplicatas logo abaixo, abertos só quando pedidos.", "onde": "Compras > Notas de Entrada" },
+        { "tipo": "melhoria", "o_que": "Cada tela de inclusão mostra qual documento está aberto num crachá colorido antes das etapas (NF-e, NFC-e, CT-e, MDF-e e Entrada), e o texto embaixo de cada etapa diz uma coisa só: o cliente, os itens com o valor, o meio de pagamento.", "onde": "Vendas e Compras" },
+        { "tipo": "melhoria", "o_que": "Revisão da NF-e e detalhe da nota nas Notas Transmitidas no mesmo formato rótulo e valor das Notas de Entrada.", "onde": "Vendas > NF-e e Notas Transmitidas" },
+        { "tipo": "melhoria", "o_que": "Visual padronizado: cartões e painéis com cantos iguais, botões de ícone redondos e barra superior só com os ícones, com voltar, avançar e recarregar à esquerda da busca.", "onde": "Todas as telas" },
+        { "tipo": "novidade", "o_que": "Conferência do caixa mostra o saldo do extrato (OFX) ao lado do saldo do sistema.", "onde": "Financeiro > Caixa e Bancos" },
+        { "tipo": "novidade", "o_que": "Cadastro de produto com descrição e referência variáveis.", "onde": "Cadastros > Produtos" },
+        { "tipo": "melhoria", "o_que": "Atalhos do rodapé da NFC-e menores, ocupando menos espaço.", "onde": "Vendas > NFC-e" },
+        { "tipo": "correcao", "o_que": "O ISS não sai mais do total da nota.", "onde": "Vendas" },
+        { "tipo": "correcao", "o_que": "Enter rápido na busca não escolhe mais da lista do texto anterior.", "onde": "Buscas" },
+        { "tipo": "correcao", "o_que": "NFS-e autorizada ou cancelada pelo padrão nacional não aparece mais como Com erro.", "onde": "Notas Transmitidas" }
+      ]
+    },
+    {
+      "numero": "1.2.5",
+      "data": "2026-10-15",
+      "mudancas": [
+        { "tipo": "melhoria", "o_que": "Caixa da NFC-e mais enxuto: a logomarca da empresa no lugar das últimas vendas, total maior no topo, pagamento numa janela própria com teclas de 1 a 8 e troco, e a venda nova abre direto.", "onde": "Vendas > NFC-e" },
+        { "tipo": "melhoria", "o_que": "NF-e em etapas numa página só, com o Enter de ponta a ponta, pagamento no jeito da NFC-e e, no F2 da revisão, a escolha entre Finalizar, Registrar e Voltar. O estoque aparece ao lado de cada item.", "onde": "Vendas > NF-e" },
+        { "tipo": "novidade", "o_que": "Configuração Força dinheiro (NF-e e NFC-e) e F10 para o desconto no total da NFC-e.", "onde": "Vendas" },
+        { "tipo": "novidade", "o_que": "Cadastro rápido de cliente e de produto sem sair da NF-e, da NFC-e ou do Pedido.", "onde": "Vendas" },
+        { "tipo": "melhoria", "o_que": "Atalhos de teclado do Delphi nas telas de venda, valendo com o cursor em qualquer lugar fora de um campo. O F1 mostra primeiro os atalhos da tela aberta.", "onde": "Vendas, Notas Transmitidas, Contas" },
+        { "tipo": "novidade", "o_que": "Importa Pedido e Fatura OS ficam nas Notas Transmitidas, que pergunta se a nota sai como NFC-e ou NF-e.", "onde": "Notas Transmitidas" },
+        { "tipo": "novidade", "o_que": "Perfis de usuário prontos (Supervisor, Vendas, Caixa, Estoque, Compras, Financeiro, Fiscal) e nível de acesso por módulo.", "onde": "Sistema > Usuários" },
+        { "tipo": "novidade", "o_que": "Mais de uma filial: trocar de filial pelo menu, estoque das outras lojas na busca de produto e financeiro seguindo a filial do login.", "onde": "Sistema, Estoque, Financeiro" },
+        { "tipo": "novidade", "o_que": "Envio das notas à contabilidade (Domínio) pela API Onvio.", "onde": "Integrações" },
+        { "tipo": "melhoria", "o_que": "Caixa e Bancos: cheque pré-datado no lançamento, Ctrl+setas trocam a conta, Esc limpa a ficha e a tela cabe sem rolagem em monitor menor.", "onde": "Financeiro > Caixa e Bancos" },
+        { "tipo": "melhoria", "o_que": "Textos explicativos das telas viraram um ícone de ajuda com o texto no mouse; os avisos de problema continuam visíveis.", "onde": "Todas as telas" },
+        { "tipo": "melhoria", "o_que": "As configurações que ainda não têm efeito no sistema ficam numa aba À implementar.", "onde": "Configurações" },
+        { "tipo": "correcao", "o_que": "Gravação de nota que demora mostra Aguarde em vez de deixar a tela parada, e o aviso de estoque negativo da NFC-e não fica mais preso na tela.", "onde": "Vendas" }
+      ]
+    },
+    {
+      "numero": "1.2.4",
+      "data": "2026-10-09",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Balanço de estoque: conte os produtos com o leitor de código de barras (cada leitura soma 1) ou digitando, parcial ou completo, com a data de hoje ou o último dia de um mês passado. Gerar mostra o resumo antes e cria os ajustes de entrada e saída; dá para desfazer. O balanço completo e o de mês fechado pedem a senha do responsável.", "onde": "Estoque > Controle de Estoque > Balanço" },
+        { "tipo": "melhoria", "o_que": "Os ajustes gerados pelo balanço não aparecem na lista de notas, nos relatórios de venda nem nos números da tela inicial.", "onde": "Notas, Relatórios, Início" },
+        { "tipo": "novidade", "o_que": "Baixar o XML da nota pelo menu Ações (nota cancelada vem junto com o evento de cancelamento, num .zip).", "onde": "Notas Transmitidas" },
+        { "tipo": "novidade", "o_que": "Desfazer a junção de pedidos: apaga o pedido juntado e devolve os de origem para Finalizado.", "onde": "Pedidos de Venda" },
+        { "tipo": "novidade", "o_que": "O fechamento do mês confere as vendas e as compras com a SEFAZ, e nota sem autorização fica fora do Sintegra e dos relatórios do fechamento.", "onde": "Fechamento do mês" },
+        { "tipo": "novidade", "o_que": "O controle de datas do banco (lançar e conciliar desde, dias livres e o responsável que libera) pode ser editado na tela.", "onde": "Cadastros > Bancos" },
+        { "tipo": "melhoria", "o_que": "A janela de alterar lançamento segue o padrão da ficha, com as colunas alinhadas.", "onde": "Financeiro > Caixa e Bancos" },
+        { "tipo": "correcao", "o_que": "Usuário com filial no cadastro entra só nela, como no Delphi.", "onde": "Login" },
+        { "tipo": "melhoria", "o_que": "No acesso remoto do suporte, a faixa mostra o nome do técnico conectado e a hora em que a conexão cai se ficar parada.", "onde": "Suporte" },
+        { "tipo": "melhoria", "o_que": "O que sai no PDF do relatório se escolhe na ficha do relatório, e os botões Relatório e Gráficos ficaram em destaque.", "onde": "Relatórios" }
+      ]
+    },
+    {
+      "numero": "1.2.3",
+      "data": "2026-10-05",
+      "mudancas": [
+        { "tipo": "melhoria", "o_que": "O assistente conversa de forma mais natural: responde a cumprimentos e agradecimentos, diz que está funcionando quando perguntam, pede mais detalhes quando a pergunta é vaga e abre cada resposta com uma frase sobre o que você pediu. O passo a passo continua vindo da ajuda revisada.", "onde": "Assistente" }
+      ]
+    },
+    {
+      "numero": "1.2.2",
+      "data": "2026-10-05",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "O assistente entende perguntas em sequência, como \"e para dar baixa nele?\" ou \"ainda não resolveu\", sem repetir o caminho que não deu certo. Depois de 5 respostas no mesmo assunto sem resolver, ele oferece o suporte.", "onde": "Assistente" },
+        { "tipo": "melhoria", "o_que": "Quando a inteligência artificial está fora do ar, o assistente mostra a resposta pronta da ajuda, ou os passos a passo e a página de dúvidas que combinam com a pergunta.", "onde": "Assistente" },
+        { "tipo": "novidade", "o_que": "O certificado digital A1 da empresa pode ser enviado e trocado pela tela, com a conferência da senha, da validade e do CNPJ antes de gravar.", "onde": "Cadastros > Filiais > Certificado" },
+        { "tipo": "melhoria", "o_que": "A chave secreta do aplicativo do Mercado Livre é informada pela tela de configuração, e quando a conexão é recusada a tela mostra o motivo.", "onde": "Integrações > Mercado Livre" }
+      ]
+    },
+    {
+      "numero": "1.2.1",
+      "data": "2026-10-02",
+      "mudancas": [
+        { "tipo": "melhoria", "o_que": "O Financeiro do menu ficou dividido em Movimento, Cobrança e Automação e Análises, e Bancos de Cheque foi para Cadastros > Financeiro.", "onde": "Menu" },
+        { "tipo": "melhoria", "o_que": "Primeira versão para os clientes. CT-e, MDF-e e Mercado Livre vêm instalados, mas fora do menu até serem liberados para a empresa; o Assistente virtual fica desligado.", "onde": "Menu" },
+        { "tipo": "novidade", "o_que": "Conferência pelo extrato do banco (OFX) junta vários lançamentos num movimento só: o depósito da maquininha que soma as vendas de cartão do dia (com os centavos de taxa acertados pelo valor que o banco pagou) e o PIX que paga vários títulos. O que não fecha sozinho dá para compor à mão, inclusive com títulos em aberto, que são baixados na hora.", "onde": "Financeiro > Caixa e Bancos > Conferir extrato" },
+        { "tipo": "novidade", "o_que": "O extrato pode ser organizado pela data da conciliação, como o banco mostra, com o saldo no banco e o que ainda falta conciliar no alto. Cada lançamento de venda mostra o meio de pagamento (PIX, crédito, débito).", "onde": "Financeiro > Caixa e Bancos" },
+        { "tipo": "melhoria", "o_que": "Excluir um lançamento de venda ou um título gerado devolve a venda para ser lançada de novo à mão, em vez de ela sumir das listas.", "onde": "Caixa e Bancos, Contas a Receber, Contas a Pagar, Geração de Títulos" },
+        { "tipo": "melhoria", "o_que": "Pedido de venda: os campos Obs1, Obs2 e Obs3 e o custo/lucro seguem as configurações do sistema desktop (o custo fica escondido do vendedor, como lá).", "onde": "Vendas > Pedidos de Venda" },
+        { "tipo": "melhoria", "o_que": "Os Controles do Sistema só abrem para o administrador, com a senha dele. Só o contador alterado é gravado, e nunca abaixo do maior número já usado; antes de gravar aparece o que muda (de → para), e a alteração fica registrada.", "onde": "Cadastros > Filiais > Controles do Sistema" },
+        { "tipo": "correcao", "o_que": "Clique duplo em Gravar não lança mais o título parcelado, a sangria ou o suprimento duas vezes.", "onde": "Contas a Receber, Contas a Pagar, Caixa, Cheques, Geração de Títulos" },
+        { "tipo": "correcao", "o_que": "Nota enviada sem resposta da SEFAZ fica na fila automática: não se corrige, edita nem troca a data até a consulta confirmar o que aconteceu.", "onde": "Notas Transmitidas" },
+        { "tipo": "correcao", "o_que": "Lançar Nota com fornecedor novo de endereço longo ou acentuado não falha mais, e o custo médio com estoque negativo passa a ser calculado como no sistema desktop.", "onde": "Compras > Lançar Nota" },
+        { "tipo": "correcao", "o_que": "Um erro de banco ao clicar num botão mostra um aviso com código para o suporte, em vez de travar a tela.", "onde": "Financeiro, Caixa, Cheques, Estoque, Tabelas de Preço" }
+      ]
+    },
+    {
+      "numero": "1.1.15",
+      "data": "2026-09-28",
+      "mudancas": [
+        {
+          "tipo": "correcao",
+          "o_que": "A mensagem de cobrança saía com o nome e o Pix do cliente selecionado ANTES: ao trocar de cliente na lista, o texto copiado cumprimentava o anterior e o Pix podia cair na conta da operação do contrato dele.",
+          "onde": "Financeiro > Controle de Clientes"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Com algum título em atraso, a cobrança e o Pix copia e cola levam só os vencidos: a mensalidade que ainda vai vencer não é mais cobrada junto com a atrasada.",
+          "onde": "Financeiro > Controle de Clientes e Contas a Receber"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.14",
+      "data": "2026-09-28",
+      "mudancas": [
+        {
+          "tipo": "novidade",
+          "o_que": "Pix copia e cola da cobrança agora vem da conta bancária: cada conta pode ter sua chave Pix e dizer quais operações recebem nela (ex.: nota de serviço numa conta, recibo em outra). A chave única que ficava nas configurações deixou de valer — cadastre o Pix na conta, senão a cobrança sai sem Pix.",
+          "onde": "Cadastro de Bancos, Controle de Clientes, Contas a Receber"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Controle de Clientes: contrato de mensalidade e histórico de cobrança de cada cliente, com estatísticas.",
+          "onde": "Financeiro > Controle de Clientes"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Anomalias do sistema em painel, com \"Resolver\", \"Ciente\" e \"Como resolver\"; Resultado e Caixa e Análises Financeiras refeitos.",
+          "onde": "Financeiro"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Antes de transmitir, a nota é conferida (data, direção do CFOP, destinatário habilitado na SEFAZ); envio automático desligável por modelo, botão Transmitir, edição do XML com senha do usuário 0 e tela Corrigir Nota com o erro da SEFAZ.",
+          "onde": "Vendas > Notas Transmitidas"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Nota não transmitida sai com a data de hoje; NF-e transmitida em dia posterior não sai mais com a data de saída antes da de emissão; Corrigir Nota não apaga mais frete, seguro e classificação contábil.",
+          "onde": "Vendas > Notas Transmitidas"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "DANFE revisado e logomarca da filial trocável pela tela.",
+          "onde": "Impressão da NF-e"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.13",
+      "data": "2026-09-25",
+      "mudancas": [
+        {
+          "tipo": "correcao",
+          "o_que": "Completa a correção da 1.1.12: agora SÓ a NFC-e abre na tela de venda no balcão ao usar Alterar. Qualquer outro documento — NF-e, nota interna, e também os modelos menos comuns, como os que ficam sem modelo definido na operação — abre na tela de NF-e. Na 1.1.12 a correção alcançava a nota interna e a NF-e, mas um documento de modelo diferente desses ainda ia parar na tela errada.",
+          "onde": "Vendas > Notas Transmitidas"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.12",
+      "data": "2026-09-25",
+      "mudancas": [
+        {
+          "tipo": "correcao",
+          "o_que": "Alterar uma nota INTERNA que ainda estava como \"Registrada\" abria a tela de venda no balcão e, ao finalizar, trocava a operação da nota pela operação de NFC-e configurada — a nota interna virava uma NFC-e de verdade e era enviada à SEFAZ. Agora ela abre na tela de NF-e, que é onde foi feita, e mantém a própria operação. Atualize assim que puder: enquanto não atualizar, não use Alterar em nota Interna.",
+          "onde": "Vendas > Notas Transmitidas"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.11",
+      "data": "2026-09-25",
+      "mudancas": [
+        {
+          "tipo": "novidade",
+          "o_que": "Um produto pode ser montado a partir de outros. O cadastro de Kits diz de que ele é feito, e montar ou desmontar movimenta o estoque dos dois lados de uma vez. Dá para cadastrar um produto novo sem sair da tela.",
+          "onde": "Controle de Estoque > Kits"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "O lançamento pode ser feito inteiro pelo teclado: o Enter caminha pelos campos na ordem da tela e, na NF-e, atravessa as abas e as etapas até o fim da nota, sem passar pelo mouse.",
+          "onde": "Caixa e Bancos, NF-e, Consulta de Estoque"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "O Meu menu foi refeito: a ordem muda arrastando, inclusive para dentro de um grupo; cada tela pode receber um ícone escolhido de toda a biblioteca; e a lista filtra por ocultas, renomeadas ou seus próprios grupos.",
+          "onde": "Sistema > Meu menu"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Bancos ganharam a marca \"Usa OFX\". No banco marcado, o lançamento nasce pendente e só a conferência do extrato o concilia — antes ele nascia conciliado na data, o que não é verdade em conta conferida pelo extrato. Nada muda nos bancos não marcados. A marca só aparece depois que o banco de dados receber o campo, que vem numa atualização do sistema instalado no servidor.",
+          "onde": "Cadastros > Bancos"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "A senha do certificado digital deixou de ficar legível no banco de dados. Quem já tinha a senha gravada não precisa digitá-la de novo.",
+          "onde": "Cadastros > Filiais"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Fechar uma janela com edição em andamento pelo Esc ou pelo X passou a perguntar antes de descartar, em vez de jogar o trabalho fora sem avisar.",
+          "onde": "Todo o sistema"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "As janelas, os botões e os campos de data do sistema inteiro passaram a seguir o mesmo padrão. As datas agora abrem calendário em todas as telas.",
+          "onde": "Todo o sistema"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "A tela de Relatórios ganhou troca de filtros sem sair do relatório, lista de gráficos e a opção de lembrar os filtros usados.",
+          "onde": "Relatórios > Catálogo"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Em telas de 1366x768, quatro dos cinco filtros de Receber e Pagar ficavam fora da área visível e não havia como alcançá-los.",
+          "onde": "Financeiro > Receber e Pagar"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O saldo resultante saiu da área de rolagem e o totalizador entrou na grade, para continuarem visíveis enquanto se rola a lista.",
+          "onde": "Caixa e Bancos"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Na NF-e, o botão Registrar ficava por cima do Próximo, e a nota podia ser finalizada pela régua da NFC-e, que é outra.",
+          "onde": "NF-e"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Campos de valor deixaram de aceitar número absurdo, uma data apagada deixou de virar 01/01/0001 e o foco parou de se perder depois de corrigir um campo.",
+          "onde": "Corrigir Nota, Caixa e Bancos, Consulta de Estoque"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O botão que abre o menu lateral voltou a responder ao teclado e a ser anunciado corretamente por leitor de tela.",
+          "onde": "Todo o sistema"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Dois níveis de acesso que impediam o bloqueio de tela foram acertados: quem não pode ver uma tela volta a não vê-la.",
+          "onde": "Sistema > Acesso"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.10",
+      "data": "2026-09-23",
+      "mudancas": [
+        {
+          "tipo": "correcao",
+          "o_que": "Uma instalação marcada como \"não emite NF-e nem NFC-e\" deixou de exigir certificado digital. Antes ela era barrada com \"Arquivo do certificado não encontrado\" e não havia como concluir.",
+          "onde": "Instalação"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Desinstalar um sistema que nunca chegou a ser configurado deixou de apagar a atualização automática de OUTRO sistema instalado na mesma máquina.",
+          "onde": "Instalação"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Quando dois sistemas SIG3 rodam no MESMO servidor, cada um passou a ter a própria atualização automática. Antes, instalar o segundo desligava a atualização do primeiro sem avisar, e o botão \"Procurar agora\" de um mexia na versão do outro. Nada muda para quem tem um SIG3 só.",
+          "onde": "Sistema > Versão do sistema"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "No instalador de um sistema de demonstração, a conferência do banco passou a ser obrigatória e a emissão não pode mais ser religada pela detecção. Numa máquina que já roda outro SIG3, o instalador detectava o banco e as notas DELE e propunha usá-los: um Avançar distraído apontaria a demonstração para o banco de produção.",
+          "onde": "Instalação"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O instalador do servidor e o das estações ganharam identidade própria por instalação, para que instalar um segundo sistema na mesma máquina não instale por cima do primeiro nem desinstale o aplicativo das estações.",
+          "onde": "Instalação"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.7",
+      "data": "2026-09-23",
+      "mudancas": [
+        {
+          "tipo": "novidade",
+          "o_que": "O painel de lançamento do Caixa (a coluna da direita, antes chamada de \"boleta\") agora se chama ficha, ganhou um botão Limpar e passou a avisar antes de jogar fora o que você digitou: trocar de Entrou/Saiu/Receber/Pagar, abrir outra conta ou trocar a transação com a ficha preenchida agora pede confirmação. Antes, um clique errado apagava o lançamento inteiro sem dizer nada.",
+          "onde": "Financeiro > Caixa e Bancos"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Adiantamento de cliente e crédito com fornecedor podem ser lançados e desfeitos direto pela tela do Caixa, pelo combo de transação ou pelo atalho da faixa \"De sempre\".",
+          "onde": "Financeiro > Caixa e Bancos"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "A tela de entrada do sistema foi redesenhada: o campo de senha fica num cartão à esquerda e a apresentação do sistema à direita.",
+          "onde": "Entrada do sistema"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "As telas de cadastro ficaram mais limpas: o menu \"Comandos\" saiu do cabeçalho, o botão de configurações desceu para o rodapé, e a situação do registro (bloqueado, sem NCM, código repetido) passou a aparecer como um ícone colado ao nome na lista, em vez de ocupar uma coluna só dela - sobra largura para os dados.",
+          "onde": "Clientes, Produtos, Contas, Setores e Bancos"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "As fichas de Cliente e de Produto foram reorganizadas em cartões, e a inscrição estadual deixou de ser cobrada de quem não tem.",
+          "onde": "Cadastros > Clientes e Produtos"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "As listas de produtos da Revisão Fiscal deixaram de travar com muitas linhas: passaram a carregar sob demanda enquanto você rola.",
+          "onde": "Fiscal > Revisão fiscal"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "A baixa de adiantamento procurava pela transação errada e não achava o crédito do participante.",
+          "onde": "Financeiro > Caixa e Bancos"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Numa lista, a linha selecionada voltava a ficar da cor do \"mouse por cima\" e se perdia de vista.",
+          "onde": "Todas as listas"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.6",
+      "data": "2026-09-22",
+      "mudancas": [
+        {
+          "tipo": "correcao",
+          "o_que": "A atualização falhava sempre com \"acesso negado\" enquanto a pasta das estações estivesse compartilhada na rede. O Windows não deixa renomear uma pasta que tem uma subpasta compartilhada, e a pasta das estações ficava dentro da pasta do sistema. Agora ela fica ao lado, e o sistema a leva para lá sozinho na primeira vez que sobe. As estações continuam abrindo o mesmo endereço de sempre.",
+          "onde": "Servidor (não aparece em tela)"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Se a pasta do sistema estiver aberta por alguém no momento da atualização - uma janela do Windows Explorer, por exemplo - a atualização deixa de falhar: ela troca os arquivos um a um em vez de trocar a pasta inteira, guardando antes uma cópia da versão anterior para poder voltar.",
+          "onde": "Servidor (não aparece em tela)"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O aviso de que o sistema sai do ar ficava na tela o tempo todo, e ao confirmar uma atualização aparecia duplicado. Agora ele só aparece depois do clique, uma vez, com a frase da ação escolhida. O botão de voltar também passou a pedir confirmação e a dizer para qual versão volta.",
+          "onde": "Sistema > Versão do sistema"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.5",
+      "data": "2026-09-22",
+      "mudancas": [
+        {
+          "tipo": "melhoria",
+          "o_que": "A pasta de instalação do sistema no servidor deixou de ter mais de 400 arquivos soltos e passou a ter algumas dezenas: o programa inteiro agora vem num arquivo só. Nada muda para quem usa - muda para quem precisa olhar essa pasta e entender o que é cada coisa.",
+          "onde": "Servidor (não aparece em tela)"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "O botão \"Voltar para a versão anterior\" saiu do rodapé e passou a ficar ao lado de \"Procurar agora\", na mesma linha. A tela também voltou a usar a largura inteira da janela.",
+          "onde": "Sistema > Versão do sistema"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.4",
+      "data": "2026-09-22",
+      "mudancas": [
+        {
+          "tipo": "melhoria",
+          "o_que": "O pacote de atualização ficou menor: saíram as traduções de 13 idiomas que o sistema não usa e arquivos de documentação interna que não tinham por que ser instalados. São cerca de 18 MB e 91 arquivos a menos para baixar a cada atualização.",
+          "onde": "Servidor (não aparece em tela)"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "O servidor passou a aceitar também o formato compacto de pacote, em que o sistema inteiro vem num arquivo só em vez de centenas. Esta versão ainda chega no formato antigo - é a próxima que poderá vir compacta, e aí a pasta de instalação deixa de ter mais de 400 arquivos soltos.",
+          "onde": "Servidor (não aparece em tela)"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.3",
+      "data": "2026-09-21",
+      "mudancas": [
+        {
+          "tipo": "novidade",
+          "o_que": "\"Procurar agora\" passou a pedir confirmação antes de rodar. Se houver versão nova, ele baixa e troca, e a troca derruba todo mundo por cerca de um minuto - quem clica precisa saber disso antes, e não descobrir quando a tela parar de responder. Se já estiver na versão mais nova, nada acontece e ninguém é desconectado.",
+          "onde": "Sistema > Versão do sistema"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "A SEGUNDA atualização de um servidor falhava sempre. A primeira guardava a versão antiga numa pasta de descarte que ninguém apagava, e a seguinte tropeçava nela. O sistema voltava sozinho e continuava no ar, mas nunca chegava na versão nova. Agora a pasta de descarte é apagada, e com o sistema ainda no ar - sem aumentar o tempo de parada.",
+          "onde": "Servidor (não aparece em tela)"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.2",
+      "data": "2026-09-21",
+      "mudancas": [
+        {
+          "tipo": "novidade",
+          "o_que": "A tela passou a dizer quando foi a última vez que o sistema procurou versão nova e o que ele achou - por exemplo \"última conferência hoje às 15:48: o sistema já estava na versão mais nova\". Antes isso só existia no log do servidor, e não dava para saber, olhando a tela, se a atualização automática estava funcionando ou parada.",
+          "onde": "Sistema > Versão do sistema"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "A barra de rolagem desta tela aparecia no meio da janela, com metade da tela vazia ao lado. Agora ela fica na borda, como em todas as outras.",
+          "onde": "Sistema > Versão do sistema"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "A data mostrada em \"guardada para voltar\" podia ser trocada pela data da última conferência - uma data errada com cara de certa. As duas passaram a ser guardadas separadamente.",
+          "onde": "Sistema > Versão do sistema"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.1",
+      "data": "2026-09-21",
+      "mudancas": [
+        {
+          "tipo": "correcao",
+          "o_que": "A tela de login aparecia encostada no canto superior esquerdo, sem o cartão centralizado. O estilo dela não estava chegando ao navegador.",
+          "onde": "Tela de login"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "A lista \"O que mudou nesta versão\" era cortada no pé da tela, sem barra de rolagem e sem nada indicando que havia mais. Agora ela rola.",
+          "onde": "Sistema > Versão do sistema"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O pacote da atualização automática passou a ser montado no mesmo formato da instalação do servidor. Antes ele era recusado ao chegar, e o sistema continuava na versão anterior - com segurança, mas sem nunca atualizar.",
+          "onde": "Servidor (não aparece em tela)"
+        }
+      ]
+    },
+    {
+      "numero": "1.1.0",
+      "data": "2026-09-21",
+      "mudancas": [
+        {
+          "tipo": "novidade",
+          "o_que": "O financeiro foi reorganizado em torno de uma ideia só: Caixa e Bancos é a mesa onde o dinheiro se move, e Contas a Receber e Contas a Pagar são a central dos títulos. Receber e Pagar passam a consultar e incluir; toda baixa acontece no Caixa, junto com o lançamento do dinheiro. Não existe mais dar baixa num título sem dizer por onde o valor entrou ou saiu.",
+          "onde": "Financeiro"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Geração automática de títulos: ao autorizar uma nota, o título nasce sozinho, e a venda à vista já entra no caixa. Antes era preciso lançar à mão depois.",
+          "onde": "Financeiro > Contas a Receber"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Fluxo de Caixa de 13 semanas: o que entra e o que sai, semana a semana, para enxergar aperto antes de ele chegar.",
+          "onde": "Financeiro > Fluxo de Caixa"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Conferência pelo extrato do banco: importando o arquivo OFX, o sistema aponta o que já está lançado, o que falta e o que não bate. Ele confere se o arquivo é mesmo da conta aberta antes de mostrar qualquer coisa.",
+          "onde": "Financeiro > Caixa e Bancos"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Boletos do DDA aparecem no Contas a Pagar, para conferir o que o banco já sabe que você deve.",
+          "onde": "Financeiro > Contas a Pagar"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Cobrança por WhatsApp com régua de mensagens, e Pix copia e cola gerado na própria tela da cobrança.",
+          "onde": "Financeiro > Contas a Receber"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Relatórios do financeiro no catálogo - receber, pagar, caixa, duplicatas, limite de crédito, razões e conferência - com gráficos numa aba ao lado da folha.",
+          "onde": "Relatórios"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "O sistema passou a se atualizar sozinho. Ele confere uma vez por dia se há versão nova, baixa e deixa pronta; a troca acontece de madrugada, ou na próxima vez que o computador for ligado - o que vier primeiro. Se a versão nova não subir, o sistema volta sozinho para a anterior e continua no ar.",
+          "onde": "Servidor (não aparece em tela)"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Tela para ver em que versão o sistema está, qual ficou guardada, e o que cada uma mudou - com um botão para voltar à anterior.",
+          "onde": "Sistema > Versão do sistema"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "O número da versão passou a aparecer na barra superior e na tela de login, para o suporte conseguir lê-lo num print, sem precisar de acesso ao servidor.",
+          "onde": "Barra superior e tela de login"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Tela de Transporte, com incluir, alterar e excluir, e o lançamento de transporte num lugar só.",
+          "onde": "Transporte"
+        },
+        {
+          "tipo": "novidade",
+          "o_que": "Caixa de entrada de NF-e retrabalhada: confirmação antes de cada ação, o Ignorar saiu do meio dos botões e foi para o menu, e a nota de transportador (NFT) passou a guardar o XML como as demais.",
+          "onde": "Fiscal > Manifestação"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Ao lançar uma nota de entrada, o sistema avisa qual operação está sendo usada, permite vincular produto pelo código de barras e marcar todos os itens de uma vez.",
+          "onde": "Lançar nota"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Toda busca de tela procura também pelo código do registro. Digitar o número do produto na Consulta de Estoque, ou o código do cliente num cadastro, agora acha.",
+          "onde": "Cadastros e Consulta de Estoque"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Relatório com muitas folhas passou a sair uma folha por vez na tela, em vez de fazer o sistema parecer travado enquanto monta tudo.",
+          "onde": "Relatórios"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O corte de texto nos relatórios passou a considerar a largura real da letra, e as colunas de nome e histórico ficaram mais largas. Antes, nome comprido sumia no meio.",
+          "onde": "Relatórios"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "O logo da tela de login sumia no tema escuro: as letras eram azul-escuro sobre fundo escuro. Agora ele troca junto com o tema.",
+          "onde": "Tela de login"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "Listas suspensas passaram a mostrar o nome inteiro e a não sair da tela.",
+          "onde": "Sistema inteiro"
+        },
+        {
+          "tipo": "correcao",
+          "o_que": "As telas do financeiro passaram a caber em tela pequena sem esconder totalizador atrás de rolagem, e a se ajustar à altura da tela do computador.",
+          "onde": "Financeiro"
+        },
+        {
+          "tipo": "melhoria",
+          "o_que": "Atualizar por cima pelo instalador passou a guardar a versão anterior. Antes, atualizar apagava a antiga e não havia como voltar.",
+          "onde": "Instalador do servidor"
+        }
+      ]
+    }
+  ]
+}
