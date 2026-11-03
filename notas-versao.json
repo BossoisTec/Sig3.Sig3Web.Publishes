@@ -13,6 +13,19 @@
   ],
   "versoes": [
     {
+      "numero": "1.3.3",
+      "data": "2026-11-03",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Página de instalação do servidor com certificado, CSC, séries e emissão por filial, importação do transmissor antigo e uso do certificado já instalado no Windows.", "onde": "Instalação do servidor" },
+        { "tipo": "melhoria", "o_que": "O e-mail do sistema e o envio automático da nota ficam guardados no banco, não mais no arquivo de configuração. Na primeira leitura o que já existia é migrado sozinho.", "onde": "Sistema > E-mail do sistema" },
+        { "tipo": "melhoria", "o_que": "O menu lateral só abre pelo botão do cabeçalho; clicar num item ou fora dele fecha.", "onde": "Menu" },
+        { "tipo": "novidade", "o_que": "Botão direito na célula mostra o conteúdo inteiro do valor, e a aba SQL deixou de dar erro com textos acentuados.", "onde": "Sistema > Banco de dados" },
+        { "tipo": "correcao", "o_que": "No pedido novo, o limite de crédito e o teto de desconto passam a valer como no sistema antigo.", "onde": "Vendas > Pedidos" },
+        { "tipo": "correcao", "o_que": "A busca de vendas do Mercado Livre com texto comprido não derruba mais a consulta.", "onde": "Integrações > Mercado Livre" },
+        { "tipo": "melhoria", "o_que": "O sistema deixou de usar HTTPS com certificado próprio na rede interna: funciona só por HTTP, como já era usado.", "onde": "Sistema" }
+      ]
+    },
+    {
       "numero": "1.3.2",
       "data": "2026-10-30",
       "mudancas": [
