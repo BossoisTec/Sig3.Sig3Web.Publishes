@@ -13,6 +13,15 @@
   ],
   "versoes": [
     {
+      "numero": "1.3.4",
+      "data": "2026-11-03",
+      "mudancas": [
+        { "tipo": "correcao", "o_que": "A venda nova do Checkout da NFC-e passa a ser gravada, numerada e transmitida pela filial de quem está no caixa, e não mais sempre pela filial 1.", "onde": "Emissões > NFC-e" },
+        { "tipo": "melhoria", "o_que": "O atendimento do suporte ganhou o item \"Chamar suporte\" no menu lateral; com o suporte conectado, o nome dele aparece numa pílula no cabeçalho, e encerrar o acesso pede confirmação.", "onde": "Suporte" },
+        { "tipo": "melhoria", "o_que": "O chip do documento nas grades volta à cor cheia, como era antes.", "onde": "Grades de documentos" }
+      ]
+    },
+    {
       "numero": "1.3.3",
       "data": "2026-11-03",
       "mudancas": [
