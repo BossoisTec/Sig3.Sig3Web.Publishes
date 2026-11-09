@@ -1,12 +1,12 @@
 {
-    "versao":  "1.3.7",
-    "arquivo":  "https://github.com/BossoisTec/Sig3.Sig3Web.Publishes/releases/download/v1.3.7/sig3-1.3.7.zip",
-    "tamanho_bytes":  110744708,
-    "sha256":  "c5f090387b2c2266944e1b01bfab63842ce9c8485e2aa2ac83c3c7b971ac3104",
-    "assinatura":  "ry8MPjSYQmLy4ov5UVenMldKTyOWAj1y2SZVhV5V5j5FQCBixG9JDJIbD8j/2GWbtHeDHSrSCEI+UhBS2gt5wCxJE9m9vhFNHNOVLyfz9tNofT+icKy5fLUlnaoe9B372gJRw1sNjqbqrXef/ac/z5Tnozz47MQDyt+72II49HVqjfocXDGmiTicbHrab9eooLtsNi2vNBDQjJ00HqyhBY7OP0AnYFQHCnmmMIyeer9jWK1N+FFnxiwwrTjRxyOL+EIjku/dcLCtrbVZ4aTfLtqy4IzIsTLJMPIXe2xhht2ouJ7nMRYcn7o8fNURdyH5tiEEMze3FJdg8Is3U5Y68ogd8sjYsTcHGgzdA1fc2yUJLvL8CkWnsa380ShdAg2eFcLv6zEB3q4Ex5yA909IMxKgXla4WNHUZUOxD01lfz4KijalwgyPFraGYPayJ9Qnc6vFz899JwEXXM1e1X4UEhvGPS1NvDN1AEPiF08H4DciuIeVkKa85qmb66WOav3p",
-    "data":  "2026-11-06",
+    "versao":  "1.3.8",
+    "arquivo":  "https://github.com/BossoisTec/Sig3.Sig3Web.Publishes/releases/download/v1.3.8/sig3-1.3.8.zip",
+    "tamanho_bytes":  110771486,
+    "sha256":  "1788814dc8c7d8ebde56d33dd2cadc9bf896456c4ad9265a6feec2b3ec7746a5",
+    "assinatura":  "lJpsgl3RQWHmCj3YFhfVgsEgBzrL/heaivE6ih18UwSqT90e4V78w+MTG9u4rRBg13KCRvWF/3oF0zOdh6Yd8UnuCzTlq8lGlEoMy7mDAM7KXUHxT5SzTPrrIwWqc+pr8w2XwPhNAy0O6zKRZMqMgEcZRTCnfEL9SACVBEmxNtZC1kZe4Q1UbFy+FzQ0re1GvFUGjrsFyG+LOZ+Slmeu5KcbCuKindnB2fobvxmD88clZyWb4el+e7+fHCYzXtNSNB6ePvA/D3hcyBQyJv6nWsaum29PKrRNAWoduo9Im+ZCRELMIYVEARlCzXcQjWLgRMiGT4XjdSIcbdkGHDEvsiOaeolzWcA8XSaqsMLYFKvHToBXu2aT8oIjSXZIIqtfrqRD5LBh/AvUNButc4PqTHvZD+QQSI5IGEJWu2JPGIOG08K5pXI/6yfET5X53Hz18FNktPSP8zNls7wjOpKZjjqwzwbP8criY2g9497KM6ZvPljV0cdUjlAYxPvc6VCg",
+    "data":  "2026-11-09",
     "exige_banco":  [
 
                     ],
-    "assinatura_manifesto":  "tRQyBK2NvK7ORyDNEgDHDL8eGmON9/2X84smiT+oyyndNFzhhtZPj8rJ1OT2BTicQ3ZDIiwfM4twQGNVR//KY+NSXD4sUnm2+7b3DcN2Lc7K5ZYUQxuSrEWxWciXhTAHXhS9dtek0X6V8rxkXgpaCu18F7/KL3a4+dJK8fOVcmQnbnJbXIwDa5Iiu3dCK6NerZkzk/amnRQkWG5vJ3+Z6zXj8a/KlapDHz3/dXVlZ0sLMA+kZaC1vFuVvMECoyDg4/i7HF2sbQEyqc5D667/59ADA0dqYwhuC5ouxsubsTp+E5oV4LzudHlDLiOreMVaLAp+U8g96m2+/mV3VzPK64P+/sGiuB2pGZ0AA5hi9R5W/MDgwMY0ADW9dOaJJkG3R9y1Q3XaRizgDYv05ZcbxrfZP2R95Y0t4WY2goyMZxxtpNf0WnaLpa5M1ld7f2rIFedrqCyLUowdBH13NekkzVi4RvEn8cVkeyAHhIDuL9PZpUuMXa8kygYgKyb0USdx"
+    "assinatura_manifesto":  "NkgD+D4zQS8bsOH8UEy2IZSul7ukYcmLPv9v5dOIRnCPQIMXDsYvReap9bnIcO6fey9Wiyn3dF0nVALmMD0FKmnXppDhEuLr1hA45oui2/aBaRV1n7JArzJkmR+FQHdAj+bn49knYhEGe1T3rWL4RPvykVT4yRJbk5g7T797NT9qLN8LcjL0FUJRx6udPEW2Ht9rYS4ZCU6eck39zF3YoFL/XVNSnYHNOx+hdGcTWcpvAJHBK66gYpjjEEGwBrFulo3qtqh2fyp3ReKS0MEcjHDWPspaOelTXWVO2ERuDFq238GyHfp4h+EtzZln2Iggfs9r8SKVLbNaZB1Cad5Xs71MOczaQn4h5JXdOQwREzWYOVAaenf4LLeRzhwdf4/blJXMSYwQPD4a0HBEJ2toAEowm2NPs4nRZuXv2BpXe/VmiyBem9LiKordChkC+Zx+wGBBEE79ZDg/pAf6c4bbJYBstEv5zvtTP83D3gmljxx0u8jerEju6cB4JYx8bXAe"
 }

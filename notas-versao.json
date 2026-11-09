@@ -13,6 +13,52 @@
   ],
   "versoes": [
     {
+      "numero": "1.3.8",
+      "data": "2026-11-09",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Cupom da NFC-e: se nenhum computador da impressora estiver conectado ao sistema, quem emitiu a nota recebe o aviso na hora, com o nome da impressora.", "onde": "Emissões > NFC-e" },
+        { "tipo": "novidade", "o_que": "Dá para inutilizar o número de uma nota \"Em Espera\" que nunca foi à SEFAZ.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "novidade", "o_que": "O usuário com menu restrito no Delphi passa a ver o mesmo menu no SIG3, sem as telas do sistema na gaveta.", "onde": "Menu" },
+        { "tipo": "melhoria", "o_que": "NF-e e NFC-e passam a ler as configurações do Delphi e conferem cliente bloqueado e limite de crédito.", "onde": "Emissões" },
+        { "tipo": "correcao", "o_que": "A venda modelo 1 deixa de ser tratada como NFS-e: sai numerada e impressa, como no Delphi.", "onde": "Emissões > NF-e" },
+        { "tipo": "correcao", "o_que": "Operação bloqueada não aparece mais nas listas da NF-e, da entrada e do CT-e.", "onde": "Emissões, Entrada de DF-e" },
+        { "tipo": "correcao", "o_que": "Aviso de estoque, senha por usuário e casas decimais das vendas ficam como no Delphi.", "onde": "Vendas" },
+        { "tipo": "correcao", "o_que": "Registros antigos do Delphi (por exemplo, cliente gravado na filial 0) voltam a poder ser alterados.", "onde": "Cadastros" },
+        { "tipo": "correcao", "o_que": "A consulta automática da Manifestação pula a filial sem CNPJ ou sem certificado, sem encher o log.", "onde": "Manifestação" },
+        { "tipo": "melhoria", "o_que": "O rodapé de DF-e Emitidas cabe numa linha em tela pequena, com nomes curtos nos botões.", "onde": "Emissões > DF-e Emitidas" },
+        { "tipo": "melhoria", "o_que": "Visual mais limpo em Remarcação de Preços, Revisão Fiscal, Tabelas de Preço, Ajustes Pessoais e E-mail do Sistema: avisos em azul, painéis que abrem e fecham e rodapé no lugar certo.", "onde": "Cadastros, Sistema" }
+      ]
+    },
+    {
+      "numero": "1.3.7",
+      "data": "2026-11-06",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Cupom da NFC-e imprime pelo aplicativo SIG3 do PC da impressora, mesmo quando a nota é finalizada em outro computador. A impressora vem do cadastro de impressoras e é escolhida na janela de pagamento e em Acesso de Computadores.", "onde": "Emissões > NFC-e, Sistema > Acesso de Computadores" },
+        { "tipo": "novidade", "o_que": "Relatório de fábrica \"Tributação dos produtos\": NCM, CEST, CST, PIS/COFINS, cBenef e cClassTrib, com filtro por campo e por estoque.", "onde": "Relatórios" },
+        { "tipo": "novidade", "o_que": "Importar um relatório (.sig3rel) cria um relatório novo, e a tela monta os filtros como no Delphi.", "onde": "Relatórios" },
+        { "tipo": "novidade", "o_que": "Na Manifestação, o CT-e só aparece quando você é o tomador, com a opção de configuração para mostrar os demais.", "onde": "Manifestação" },
+        { "tipo": "correcao", "o_que": "O preço e o desconto da NF-e voltam ao padrão de fábrica do Delphi, e Registrar e Finalizar gravam o cBenef do item.", "onde": "Emissões > NF-e" },
+        { "tipo": "correcao", "o_que": "Mudar o cadastro de um usuário esquece só a sessão guardada dele, e entrar logo depois de trocar filial, senha ou acesso não volta mais ao login sem explicação.", "onde": "Login" },
+        { "tipo": "correcao", "o_que": "Manifestação e lançamento de DF-e seguem a filial da sessão, e não a do cadastro.", "onde": "Manifestação, Entrada de DF-e" },
+        { "tipo": "melhoria", "o_que": "Geração de títulos abre em \"Este ano\", e o Início carrega rascunhos e últimas notas de 1 ano, mais rápido.", "onde": "Financeiro, Início" }
+      ]
+    },
+    {
+      "numero": "1.3.6",
+      "data": "2026-11-06",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Campo Filial em destaque no cabeçalho de NFC-e, NF-e, CT-e e MDF-e. Cada documento age na filial dele. DF-e Emitidas e Caixa e Bancos ganham \"Todas as filiais\".", "onde": "Emissões, Financeiro" },
+        { "tipo": "novidade", "o_que": "Na NFC-e, o mesmo meio de pagamento pode entrar mais de uma vez (por exemplo, três PIX).", "onde": "Emissões > NFC-e" },
+        { "tipo": "novidade", "o_que": "A Manifestação consulta também o CT-e, e a última consulta de NF-e e CT-e aparece separada.", "onde": "Manifestação" },
+        { "tipo": "novidade", "o_que": "Boletos lê as chaves novas do monitor de boleto (CredenBoleto e CertBoleto).", "onde": "Financeiro > Boletos" },
+        { "tipo": "novidade", "o_que": "Suporte: dá para desconectar um técnico sem derrubar o outro, o acesso volta sozinho depois de uma queda, e o técnico entra pelo login do sistema.", "onde": "Suporte" },
+        { "tipo": "novidade", "o_que": "Matrícula do produto personalizada (como no Delphi) e filial padrão do cliente novo.", "onde": "Cadastros" },
+        { "tipo": "correcao", "o_que": "Código de fornecedor e de transportadora novo passa a respeitar o maior código já usado.", "onde": "Cadastros" },
+        { "tipo": "melhoria", "o_que": "Senha de cancelar NF-e/NFC-e opcional e sem bloqueio por tentativas.", "onde": "Segurança" },
+        { "tipo": "melhoria", "o_que": "Opções de liga e desliga viram interruptores, e Análises e Anomalias leem só os últimos 12 meses.", "onde": "Telas gerais, Financeiro" }
+      ]
+    },
+    {
       "numero": "1.3.5",
       "data": "2026-11-04",
       "mudancas": [
