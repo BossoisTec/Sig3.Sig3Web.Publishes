@@ -13,6 +13,24 @@
   ],
   "versoes": [
     {
+      "numero": "1.3.13",
+      "data": "2026-11-13",
+      "mudancas": [
+        { "tipo": "correcao", "o_que": "O Lançar Nota deixou de falhar ao abrir quando a filial está sem o regime tributário (CRT) no cadastro: abre com um aviso amarelo e a nota segue como Regime Normal.", "onde": "Lançamentos > Lançar Nota" },
+        { "tipo": "novidade", "o_que": "Nova configuração, desligada de início, que não deixa lançar nota de uma filial sem o regime tributário (CRT) preenchido.", "onde": "Lançamentos > Lançar Nota > Configurações" },
+        { "tipo": "novidade", "o_que": "O bloqueio por nível passa a valer sempre: quem não tem o nível de uma tela não a abre, nem pelo menu nem por botão de outra tela. Quem tem o nível cadastrado errado para um módulo vê a mensagem de acesso indisponível.", "onde": "Todo o sistema" },
+        { "tipo": "novidade", "o_que": "Lupa ao lado do produto vinculado, que abre a consulta de produtos. O duplicar produto do cadastro rápido também usa essa consulta.", "onde": "Lançamentos > Lançar Nota" },
+        { "tipo": "melhoria", "o_que": "A busca de produto acha também por referência e por marca, mostra a marca, e os títulos Matrícula, Produto, Estoque e Preço ordenam ao clicar. Enquanto a lista está aberta o fundo escurece, e clicar fora a fecha.", "onde": "Emitir NF-e, NFC-e e demais telas com busca de produto" },
+        { "tipo": "melhoria", "o_que": "O estoque do produto aparece sempre na busca e no item (a configuração Mostrar estoque deixou de existir).", "onde": "Emitir NF-e e NFC-e" },
+        { "tipo": "melhoria", "o_que": "Rodapé das telas de emissão padronizado, com o resumo do que já foi preenchido dentro dele; totais da Tributação, conferência do cadastro do cliente e cadeado da tributação no padrão do resto do sistema; quantidade do próximo item da NFC-e ao lado da busca.", "onde": "Emitir NF-e, NFC-e, CT-e e MDF-e" },
+        { "tipo": "correcao", "o_que": "NFC-e feita pela tela de NF-e passa pelo pré-voo do modelo certo, e o cliente cadastrado é conferido.", "onde": "Emitir NF-e" },
+        { "tipo": "melhoria", "o_que": "Número da nota e nota pela chave de acesso procuram pela data e ficam bem mais rápidos em base grande.", "onde": "Emissão de NF-e e NFC-e" },
+        { "tipo": "novidade", "o_que": "Segundo leiaute de impressão do pedido e o leiaute Proposta comercial A4.", "onde": "Vendas > Pedidos de Venda" },
+        { "tipo": "correcao", "o_que": "O extrato pela API do Sicoob passa a trazer o saldo do banco.", "onde": "Financeiro > Conciliação" },
+        { "tipo": "melhoria", "o_que": "O número da nota, ou do pedido, aparece na linha do título e entra na busca.", "onde": "Financeiro > Contas a Pagar e Contas a Receber" }
+      ]
+    },
+    {
       "numero": "1.3.12",
       "data": "2026-11-12",
       "mudancas": [
