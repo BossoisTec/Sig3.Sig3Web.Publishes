@@ -13,6 +13,25 @@
   ],
   "versoes": [
     {
+      "numero": "1.3.14",
+      "data": "2026-11-18",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "Controle de grade: nova tela com os modelos de grade (por exemplo TAMANHO 34, 35, 36), e no Lançar NF-e o item da nota pode ser dividido em variações. Excluir produto da nota segue o mesmo caminho do Delphi.", "onde": "Cadastro > Produtos > Controle de Grade e Lançamentos > Lançar NF-e" },
+        { "tipo": "novidade", "o_que": "Aba Fotos no cadastro de produto: várias fotos por produto, escolhidas em PNG, JPG, BMP, GIF ou WEBP e gravadas como JPEG de até 1000 px. Clicar na foto abre ela ampliada.", "onde": "Cadastro > Produtos" },
+        { "tipo": "novidade", "o_que": "Botão Exibir fotos no Resumo do produto: mostra as fotos numa faixa que rola para o lado quando passam da largura, e o clique amplia.", "onde": "Estoque > Consulta de Estoque" },
+        { "tipo": "melhoria", "o_que": "A aba Lucratividade foi reorganizada: a leitura da simulação fica dentro do cartão Simule aqui, a composição do preço junto da tabela, e os textos falam de margem positiva ou negativa. O desconto máximo do item só aparece quando o cadastro tem um.", "onde": "Estoque > Consulta de Estoque > Lucratividade" },
+        { "tipo": "novidade", "o_que": "O NCM pode ser buscado pelo código ou pela descrição nos cadastros e no Lançar Nota.", "onde": "Cadastros e Lançamentos > Lançar Nota" },
+        { "tipo": "melhoria", "o_que": "O CFOP automático passa a seguir o plano de conversão de CFOP para substituição tributária de 17/11/2026, e o retorno de remessa para venda fora do estado com ST vira 1.414 ou 1.415.", "onde": "Fiscal > Emissão de notas" },
+        { "tipo": "correcao", "o_que": "O envio automático desligado passa a valer também para nota emitida pelo Delphi, e a lista mostra o cliente do cadastro.", "onde": "Fiscal > Notas emitidas" },
+        { "tipo": "novidade", "o_que": "A observação comprida do pedido (o memo do Delphi) aparece e é editada na tela, e a Proposta comercial A4 deixou de cortar as assinaturas quando a observação é grande.", "onde": "Vendas > Pedido e Proposta comercial" },
+        { "tipo": "melhoria", "o_que": "A lista de Operações mostra as faixas 8 e 9, e a faixa 4 é tratada como entrada.", "onde": "Cadastro > Operações" },
+        { "tipo": "correcao", "o_que": "O cupom da NFC-e impresso pelo SIG3 Client pede folha da altura do conteúdo, sem cortar nem deixar papel sobrando.", "onde": "NFC-e > Impressão do cupom" },
+        { "tipo": "melhoria", "o_que": "Banco de dados: o conteúdo das tabelas pode ser visualizado e editado, e a atualização em massa aceita campos de texto longo.", "onde": "Sistema > Banco de dados" },
+        { "tipo": "melhoria", "o_que": "Login: com a senha errada o campo se limpa, treme e a página não recarrega, e o logo não se monta de novo.", "onde": "Entrada no sistema" },
+        { "tipo": "melhoria", "o_que": "Acabamento geral: movimento mais curto nas telas, botões que afundam ao clicar, data digitada do jeito da pessoa vira dd/mm/aaaa, chave de acesso em grupos, tabelas no mesmo padrão com ordenação por coluna e bordas sem corte.", "onde": "Todo o sistema" }
+      ]
+    },
+    {
       "numero": "1.3.13",
       "data": "2026-11-13",
       "mudancas": [
