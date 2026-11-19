@@ -13,6 +13,28 @@
   ],
   "versoes": [
     {
+      "numero": "1.3.15",
+      "data": "2026-11-19",
+      "mudancas": [
+        { "tipo": "novidade", "o_que": "A senha por item de menu do Delphi passa a valer no SIG3: ao abrir uma tela cujo item tem senha no Delphi, ela é pedida uma vez por login. A configuração Senha por item de menu (grupo Padrões) desliga.", "onde": "Todas as telas" },
+        { "tipo": "melhoria", "o_que": "O Contas a Receber e o Contas a Pagar seguem as decisões de 19/11: o operador fica preso à filial do cadastro, o título novo nasce na filial da lista e o painel mostra Grava na filial, o chip Créditos mostra os adiantamentos, o Novo título grava numa transação só e a busca acha pela nota, pelo pedido e pelo código do cliente ou fornecedor.", "onde": "Financeiro > Contas a Receber e Contas a Pagar" },
+        { "tipo": "melhoria", "o_que": "A cobrança do Contas a Receber passou a ser por empresa (régua e e-mail), e gerar o boleto de novo não duplica mais o boleto.", "onde": "Financeiro > Contas a Receber" },
+        { "tipo": "melhoria", "o_que": "A conferência do OFX pode compor vários movimentos do banco num lançamento só, e o estorno acha a baixa que o Delphi fez com o caixa em outra data. Também foram corrigidos vários casos de ficha, cheque e baixa em lote.", "onde": "Financeiro > Caixa e Bancos" },
+        { "tipo": "melhoria", "o_que": "No campo de busca de lista (cliente, produto, banco e outros), o Enter não escolhe mais a primeira opção sem você ter marcado uma.", "onde": "Telas com busca em lista" },
+        { "tipo": "novidade", "o_que": "Nova aba Kits nos anúncios do Mercado Livre, com o diagnóstico da conta para os kits virtuais antes de publicar.", "onde": "Integrações > Mercado Livre > Anúncios > Kits" },
+        { "tipo": "melhoria", "o_que": "Nas campanhas, o desconto por nível e por público aparece antes da mensagem, com o aviso do desconto ao lado do selo.", "onde": "Vendas > Campanhas" },
+        { "tipo": "correcao", "o_que": "A nota reaberta volta com a condição de pagamento e a posição de cobrança que tinha.", "onde": "Emissões > NF-e" },
+        { "tipo": "melhoria", "o_que": "A confirmação de Consultar DF-e na SEFAZ mostra a filial que será consultada, a mesma que você escolheu no login ou trocou no menu. O rodapé passa a mostrar a última consulta de NF-e e de CT-e dessa filial, e não mais a mais recente entre todas. Com a consulta automática ligada, cada filial passa a ser consultada a cada 1h15 contando a partir da própria última consulta, uma depois da outra, e o erro numa filial não impede a seguinte.", "onde": "Lançamentos > Manifestação" },
+        { "tipo": "melhoria", "o_que": "A Consulta de Estoque agrupa os produtos de uma grade na lista, carrega as fotos só quando você pede e deixa o painel de detalhes com a largura que você puxar. Também ganhou ajustes de espaçamento e de layout.", "onde": "Estoque > Consulta de Estoque" },
+        { "tipo": "melhoria", "o_que": "Nova janela Notas de compra: busca por fornecedor (código ou nome) ou pelo número da nota, com filtro de período. A busca de produto ficou mais completa, mostrando mais dados de cada item.", "onde": "Estoque > Etiquetas de produto" },
+        { "tipo": "melhoria", "o_que": "O campo É kit passou a ser uma chave Sim/Não, igual a Produz mesmo sem insumo.", "onde": "Cadastro > Kits" },
+        { "tipo": "melhoria", "o_que": "As linhas das grades e das tabelas ficaram mais compactas (27 px) e o ícone de situação ficou menor.", "onde": "Grades e tabelas do sistema" },
+        { "tipo": "correcao", "o_que": "A barra cinza que marca a linha selecionada só aparece depois de uma coluna escondida na primeira posição, e não mais no lugar errado.", "onde": "Grades do sistema" },
+        { "tipo": "melhoria", "o_que": "Ajustes de layout na tela de login.", "onde": "Login" },
+        { "tipo": "melhoria", "o_que": "O endereço de saúde do servidor informa o nome do serviço do Windows que roda o sistema, para a lista de servidores do SIG3 Cliente mostrá-lo.", "onde": "SIG3 Cliente > escolha do servidor" }
+      ]
+    },
+    {
       "numero": "1.3.14",
       "data": "2026-11-18",
       "mudancas": [
